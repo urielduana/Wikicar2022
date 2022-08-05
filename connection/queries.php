@@ -52,10 +52,8 @@ class BasicInsert extends Conexion{
     public function createInsert($values, $table, $askedValues){
         if($askedValues == ""){
             $this -> query = "INSERT INTO $table VALUES $values;";
-            echo "Hecho";
         }else{
             $this -> query = "INSERT INTO $table($askedValues) VALUES $values;";
-            echo "Hecho";
         }
     }
 
@@ -86,7 +84,6 @@ class BasicDelete extends Conexion{
 
     public function createDelete( $table, $conditionAsk, $conditionValue){
             $this -> query = "DELETE FROM $table WHERE $conditionAsk $conditionValue;";
-            echo "Hecho";
         }
 
     public function executeDelete($query){
@@ -96,7 +93,58 @@ class BasicDelete extends Conexion{
     public function getBasicDelete(){
         return $this->result;
     }
-
 }
 
+class BasicUpdate extends Conexion{
+    private $table;
+    private $column;
+    private $values;
+    private $condition;
+    private $query;
+    private $result;
+
+    public function __construct ($table, $column, $values, $condition){
+        parent::__construct();
+        $this -> createUpdate($table, $column, $values, $condition);
+        $this -> executeUpdate($this->query);
+    }
+
+    public function createUpdate($table, $column, $values, $condition){
+        $this -> query = "UPDATE $table SET $column = $values WHERE $condition";
+    }
+    public function executeUpdate($query){
+        $this -> result = mysqli_query($this->getConexion(),$query);
+    }
+    public function getBasicDelete(){
+        return $this->result;
+    }
+}
+
+class BasicProcedure extends Conexion{
+    private $procedure;
+    private $values;
+    private $query;
+    private $result;
+
+    public function __construct ($procedure, $values){
+        parent::__construct();
+        $this -> createProcedure($procedure, $values);
+        $this -> executeProcedure($this->query);
+    }
+
+    public function createProcedure($procedure, $values){
+
+        if($values == ''){
+            $this -> query = "CALL $procedure();";
+        }else{
+            $this -> query = "CALL $procedure($values);";
+        }
+        }
+        public function executeProcedure($query){
+        $this -> result = mysqli_query($this->getConexion(),$query);
+    }
+    public function getBasicDelete(){
+        return $this->result;
+    }
+}
 ?>
