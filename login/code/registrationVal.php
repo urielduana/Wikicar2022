@@ -15,10 +15,9 @@ if(strlen($_POST['name']) >= 1 && strlen($_POST['last']) >=1 && strlen($_POST['e
     $password = trim($_POST['password']);
     $gender = trim($_POST['gender']);
 
-    $conexion = new BasicProcedure("createAccount","$name,$last,$email,$password,$gender,@exit");
+    $conexion = new BasicProcedure("createAccount", "'$name','$last','$password','$email','$gender'", "@exit");
+    $resultado = $conexion->getProcedureOutput();
 
-    $consulta = "insert into user( User_name,User_lastname,Password,Email,Gender) VALUES ('".$name."','".$last."','".$password."','".$email."','".$gender."')";
-    $resultado = mysqli_query($conexion->getConexion());
     if($resultado){
         ?>
         <?php

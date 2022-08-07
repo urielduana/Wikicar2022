@@ -125,25 +125,40 @@ class BasicProcedure extends Conexion{
     private $values;
     private $query;
     private $result;
+    private $output;
+    private $outputResult;
 
-    public function __construct ($procedure, $values){
+
+    public function __construct ($procedure, $values, $output){
         parent::__construct();
-        $this -> createProcedure($procedure, $values);
+        $this -> createProcedure($procedure, $values, $output);
         $this -> executeProcedure($this->query);
+        $this -> output = $output;
     }
 
-    public function createProcedure($procedure, $values){
+    public function createProcedure($procedure, $values, $output){
 
         if($values == ''){
-            $this -> query = "CALL $procedure();";
+            $this -> query = "call $procedure();";
         }else{
-            $this -> query = "CALL $procedure($values);";
+            if($output ==''){
+                $this -> query = "call $procedure($values);";
+            }else{
+                    $this -> query = "call $procedure($values , $output);";
+            }
         }
         }
         public function executeProcedure($query){
         $this -> result = mysqli_query($this->getConexion(),$query);
     }
-    public function getBasicDelete(){
+    public function getProcedureOutput(){
+        $this -> outputResult = mysqli_query($this->getConexion(), "select $this->output;");
+        echo $this->query;
+
+        return $this->outputResult;
+    }
+
+    public function getProcedure(){
         return $this->result;
     }
 }

@@ -11,7 +11,7 @@ begin
 select Id_user into @check from user where email = emailin;
 if(@check = null) THEN
 	insert into user (Id_user, User_name, User_lastname, Password, Email, Gender, Permission) 
-    values ('', namein, lastnamein, passin, emailin, gender, 'N');
+    values (null, namein, lastnamein, passin, emailin, gender, 'N');
     set existout = TRUE;
 else 
     set existout = FALSE;
@@ -20,6 +20,8 @@ end//
 delimiter ;
 
 drop procedure createAccount;
-call createAccount('Juan', 'Perez', 'abc123', 'nstegell0@mysql.com', 'M', @exist);
+call createAccount('Luis', 'Martinez', '123123', 'f@gmail.com', 'M', @exist);
 select @exist;
+call createAccount('Luis', 'Martinez', '123123', 'f@gmail.com', 'M', @exist);
+call createAccount('Luis', 'Martinez', '12356480', 'f@gmail.com', 'M', @exist);
 

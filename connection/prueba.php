@@ -19,6 +19,6 @@ while($row = mysqli_fetch_row($result)){
 
 echo "</select>";
 echo "</form>";
-
+$prueba->setClose();
 
 ?>
