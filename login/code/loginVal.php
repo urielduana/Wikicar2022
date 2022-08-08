@@ -3,9 +3,9 @@
 include("../../connection/queries.php");
 error_reporting(0);
 
+$id=$_GET['id'];
 
 if(strlen($_POST['name']) >= 1 && strlen($_POST['email']) >=1 && strlen($_POST['password']) >=1){
-    
     $name=$_POST['name'];
     $password=$_POST['password'];
     $email=$_POST['email'];
@@ -13,7 +13,6 @@ if(strlen($_POST['name']) >= 1 && strlen($_POST['email']) >=1 && strlen($_POST['
 
     $resultado=$conexion->getBasicSelect();
     $filas=mysqli_num_rows($resultado);
-
     if($filas){            
         header("location:../../home.php");
     }else{
@@ -29,9 +28,8 @@ if(strlen($_POST['name']) >= 1 && strlen($_POST['email']) >=1 && strlen($_POST['
     <?php
     include("loginForm.php");
     ?>
-    <h3 class="bad">Complete the data</h3>
+    <h3 class="bad">Complete the data </h3>
     <?php
 }
 //cerrar conexion
-$conexion->setClose($conexion->getConexion());
 ?>

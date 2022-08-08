@@ -16,10 +16,10 @@
 
   <div class="inputs">
     <form action="registrationVal.php" method="post">
-      <input type="text" placeholder="Name" values="" name="name"><br>
-      <input type="text" placeholder="Last name" values="" name="last"><br>
-      <input type="email" placeholder="E-mail" values="" name="email"><br>
-      <input type="password" placeholder="Password" values="" name="password">
+      <input type="text" placeholder="Name" values="" name="name" required><br>
+      <input type="text" placeholder="Last name" values="" name="last" required><br>
+      <input type="email" placeholder="E-mail" values="" name="email" required><br>
+      <input type="password" placeholder="Password" values="" name="password" required>
       <p>
         <select name="gender">
           <option value="" disabled="" selected="">Gender</option>

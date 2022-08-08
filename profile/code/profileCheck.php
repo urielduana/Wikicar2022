@@ -62,22 +62,7 @@
 
     <main>
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsa, possimus delectus animi
-                placeat odit vitae dolorum dignissimos nostrum nesciunt, optio quibusdam blanditiis, reiciendis unde
-                reprehenderit quod recusandae accusantium quasi! Nisi amet distinctio earum consequuntur suscipit
-                ratione id quaerat ex, quisquam molestiae non. Vero tenetur quia laborum excepturi? Minus est possimus
-                facere enim, laudantium adipisci quam quas delectus ratione, nisi sapiente asperiores earum odit nostrum
-                voluptas quos cupiditate incidunt temporibus? Quibusdam, quod vero? Porro voluptatum dolorem sunt
-                praesentium fugiat illum nam rerum sit nihil velit. Repellat, corrupti. Officia repellendus est
-                molestias, aliquid repellat totam similique accusamus molestiae voluptatum fuga porro libero adipisci
-                blanditiis laudantium hic quia? Accusantium ab eaque dolorum enim itaque provident ducimus? Quae unde
-                voluptatem obcaecati rem quis fuga neque quaerat corrupti odit nemo ipsa perferendis similique ad
-                doloremque architecto atque, magnam velit saepe nobis. Qui ea tempora amet enim maxime delectus ad nihil
-                voluptatibus harum recusandae alias libero expedita corporis perspiciatis modi quae, mollitia totam
-                quisquam. Quas, quod asperiores aut numquam eum eius dolor sed perferendis optio nostrum fugiat fuga et
-                id temporibus voluptas magni ipsam nesciunt, repudiandae maxime laborum architecto impedit officia
-                similique. Dolore quam laudantium alias, deserunt consequatur iure quisquam asperiores exercitationem
-                cumque quos voluptate?</p>
+           
         </div>
     </main>
 

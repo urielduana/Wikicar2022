@@ -18,6 +18,7 @@
       <input type="text" placeholder="Name" name="name" required><br>
       <input type="email" placeholder="E-mail" name="email" required><br>
       <input type="password" placeholder="Password" name="password" required/><br>
+      <a href="loginVal.php"></a>
       <button type="submit">Login</button>
     </form>
     <form action="registrationForm.php">
