@@ -110,7 +110,8 @@ class BasicUpdate extends Conexion{
     }
 
     public function createUpdate($table, $column, $values, $condition){
-        $this -> query = "UPDATE $table SET $column = $values WHERE $condition";
+        $this -> query = "UPDATE $table SET $column = '$values' WHERE $condition";
+
     }
     public function executeUpdate($query){
         $this -> result = mysqli_query($this->getConexion(),$query);

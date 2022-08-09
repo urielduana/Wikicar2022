@@ -3,7 +3,6 @@
 include("../../connection/queries.php");
 error_reporting(0);
 
-$id=$_GET['id'];
 
 if(strlen($_POST['name']) >= 1 && strlen($_POST['email']) >=1 && strlen($_POST['password']) >=1){
     //Obtener valores del formulario

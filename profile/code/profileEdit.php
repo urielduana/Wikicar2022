@@ -1,5 +1,25 @@
 <?php
+    include("../../connection/queries.php");
+    session_start();
+    $idUser = $_SESSION['loggedUserId'];
+    $conexion = new BasicSelect("User_name,User_Lastname,Password,Email, Gender","User","Id_user = $idUser");
+    $resultado=$conexion->getBasicSelect();
 
+    while($row = $resultado->fetch_assoc()) {
+        $userName =     $row['User_name'];
+        $userLastName = $row['User_Lastname'];
+        $userPassword = $row['Password'];
+        $userEmail =    $row['Email'];
+        $userGender =   $row['Gender'];
+     }
+
+     if(($userGender=='m') or  ($userGender=='M')){
+        $userGender= "Male";
+     }elseif(($userGender=='f') or  ($userGender=='F')){
+        $userGender= "Female";
+     }else{
+        $userGender= "Other";
+     }
 ?>
 
 
@@ -70,15 +90,17 @@
         <div class="inputs">
             <form action="profileVal.php" method="POST">
                 <h1>Update Profile</h1>
-                <input type="text" class="" name="marca" placeholder="User Name" value=""><br>
-                <input type="text" class="" name="modelo" placeholder="User LastName" value=""><br>
-                <input type="text" class="" name="kilometros" placeholder="Password" value=""><br>
-                <input type="text" class="" name="kilometros" placeholder="Email" value=""><br>
+                <input type="text" class="" name="username" placeholder="User Name" value="<?php echo $userName;?>"><br>
+                <input type="text" class="" name="userlastname" placeholder="User LastName" value="<?php echo $userLastName;?>"><br>
+                <input type="email" class="" name="email" placeholder="Email" value="<?php echo $userEmail;?>"><br>
+                <input type="password" class="" name="password" placeholder="Password" value="<?php echo $userPassword;?>"><br>
                 <p>
                     <select name="gender">
-                        <option value="" disabled="" selected="">Gender</option>
+                        <option value="" disabled="" selected=""><?php echo $userGender;?></option>
                         <option value="m">Male</option>
                         <option value="f">Female</option>
+                        <option value="o">Other</option>
+
                     </select>
                 </p>
                 <button>Actualizar</button>

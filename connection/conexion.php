@@ -41,7 +41,7 @@ public function __construct(){
         return $this->conn;
     }
     public function setClose($conn){
-        mysqli_close($conn);
+        mysqli_close($this->conn);
     }
 }
 ?>
