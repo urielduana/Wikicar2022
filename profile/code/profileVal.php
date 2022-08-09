@@ -19,5 +19,5 @@ $email = new BasicUpdate("user", "Email", $userEmail, "Id_user = $idUser");
 $email->setClose($email);
 $gender = new BasicUpdate("user", "gender", $userGender, "Id_user = $idUser");
 $gender->setClose($gender);
-    
+header("location:/wikicar/profile/code/profileCheck.php");
 ?>

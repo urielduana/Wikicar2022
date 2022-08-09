@@ -14,12 +14,14 @@
      }
 
      if(($userGender=='m') or  ($userGender=='M')){
-        $userGender= "Male";
+        $userGenderEcho= "Male";
      }elseif(($userGender=='f') or  ($userGender=='F')){
-        $userGender= "Female";
+        $userGenderEcho= "Female";
      }else{
-        $userGender= "Other";
+        $userGenderEcho= "Other";
      }
+
+     echo ($userGender);
 ?>
 
 
@@ -96,7 +98,7 @@
                 <input type="password" class="" name="password" placeholder="Password" value="<?php echo $userPassword;?>"><br>
                 <p>
                     <select name="gender">
-                        <option value="" disabled="" selected=""><?php echo $userGender;?></option>
+                        <option value="<?php echo $userGender;?>" disabled="" selected=""><?php echo $userGenderEcho;?></option>
                         <option value="m">Male</option>
                         <option value="f">Female</option>
                         <option value="o">Other</option>

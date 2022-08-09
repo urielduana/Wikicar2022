@@ -63,12 +63,8 @@
     <main>
         <div>
         <?php 
-                session_start();
-                echo $_SESSION['loggedUserId'];
-            
-            
-                include("connection/conexion.php");
 
+            include("connection/conexion.php");
             $conn1= new Conexion("localhost:3306","wikicar","root","");
 
             $sql = "SELECT * FROM vw_news";
