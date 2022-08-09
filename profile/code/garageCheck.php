@@ -85,6 +85,10 @@
             $conn1->setClose($conn1->getConexion());
 ?>
 
+            <body>
+                <form action="/wikicar/profile/code/carForm.php" target="_blank">
+                    <button type="submit">Add a New Car</button>
+                </form>
         </div>
 
         <div>
