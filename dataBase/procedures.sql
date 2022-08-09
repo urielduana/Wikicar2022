@@ -30,7 +30,7 @@ select * from vw_news;
 
 create view vw_brands as select Brand_name,Founders,Foundation_date,Brand_history,country_name from brand inner join  country on brand.Country_id = country.Id_country;
 select * from vw_brands;
-
+drop view vw_brans;
 create view vw_posts as select User_name,User_lastname,Post_date,Post_text from post inner join user on post.User_id = user.Id_user;
 select * from vw_posts;
 

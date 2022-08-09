@@ -79,8 +79,7 @@
                     <?php 
                         foreach($resultadoName->fetch_all() as $country){
                             echo"<option value='$country[0]'>$country[1]</option>";
-                            echo $country[0];
-                            echo $country[1];        
+       
     }
             ?>
                 </select>
