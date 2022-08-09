@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -62,33 +67,24 @@
     </header>
 
     <main>
-        <div>
-            <?php 
-            session_start();
-            include("../../connection/conexion.php");
-
-            $conn1= new Conexion("localhost:3306","wikicar","root","");
-            $id =  $_SESSION['loggedUserId'];
-            $sql = "SELECT User_name, User_lastname, Email, Gender FROM user WHERE Id_user = $id";
-            $result = mysqli_query($conn1->getConexion(),$sql);
-
-            echo "<table border>\n";
-            while($row = mysqli_fetch_row($result)){
-            echo "<tr>\n";
-            foreach($row as $field){
-            echo "<td>$field</td>\n";
-            }
-            echo '<th><a href="profileEdit.php">Edit Profile</a></th>';
-            echo '<th><a href="profileDelete.php">Delete Profile</a></th>';
-            echo"</tr>\n";
-            }
-
-            echo "</table>\n";
-
-            $conn1->setClose($conn1->getConexion());
-?>
+        <div class="inputs">
+            <form action="profileVal.php" method="POST">
+                <h1>Update Profile</h1>
+                <input type="text" class="" name="marca" placeholder="User Name" value=""><br>
+                <input type="text" class="" name="modelo" placeholder="User LastName" value=""><br>
+                <input type="text" class="" name="kilometros" placeholder="Password" value=""><br>
+                <input type="text" class="" name="kilometros" placeholder="Email" value=""><br>
+                <p>
+                    <select name="gender">
+                        <option value="" disabled="" selected="">Gender</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </p>
+                <button>Actualizar</button>
+            </form>
         </div>
-        
+
     </main>
 
 

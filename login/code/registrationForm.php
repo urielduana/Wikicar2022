@@ -24,7 +24,7 @@
         <select name="gender">
           <option value="" disabled="" selected="">Gender</option>
           <option value="m">Male</option>
-          <option value="f">Feminine</option>
+          <option value="f">Female</option>
         </select>
       </p>
       <button type="submit">Register</button>
