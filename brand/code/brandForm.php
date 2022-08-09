@@ -1,3 +1,9 @@
+<?php
+    include("../../connection/queries.php");
+    session_start();
+    $name = new BasicSelect("Id_country, Country_name","country","");
+    $resultadoName=$name->getBasicSelect();
+?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -18,7 +24,8 @@
     <!--TOP NAVIGATION-->
     <header id="header">
         <div class="topnav" id="myTopnav">
-            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo"> <b>WikiCar</b></a>
+            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo">
+                <b>WikiCar</b></a>
             <a href="/wikicar/profile/code/profileCheck.php">PROFILE</a>
             <a href="/wikicar/profile/code/garageCheck.php">GARAGE</a>
 
@@ -62,32 +69,25 @@
 
     <main>
         <div>
-            <?php
-            include("../../connection/queries.php");
-            $id = new BasicSelect("Id_country","Country","");
-            $country = new BasicSelect("Country_name","Country","");
+            <form action="brandVal.php" method="post" >
+                <input type="text" placeholder="Brand Name" values="" name="brand" required>
+                <input type="text" placeholder="Founders" values="" name="founders" required>
+                <input type="date" placeholder="Foundation Date" values="" name="date" required>
+                <select name="country" id="country" required>
+                <option value="" disabled="" selected="">Country</option>
 
-            $idCon=mysqli_fetch_assoc($id->getBasicSelect());
-            $countryCon=mysql_fetch_assoc($country->getBasicSelect());
+                    <?php 
+                        foreach($resultadoName->fetch_all() as $country){
+                            echo"<option value='$country[0]'>$country[1]</option>";
+                            echo $country[0];
+                            echo $country[1];        
+    }
+            ?>
+                </select>
 
-            ?>
-        <form action="validatebrand.php" method="post">
-	    <input type="text" placeholder="Brand name" values="" name="brand">
-	    <input type="text" placeholder="Founders" values="" name="founders">
-	    <input type="date" placeholder="Foundation date" values="" name="date">
-        <select name="country" id="country">
-            <?php 
-           foreach($names_array as $idCon=> $countryCon) {
-                echo"<option value=$names_array[$idCon]>$names_array[$countryCon]</option>";
-                echo $idCon;
-           }
-           
-            ?>
-        </select>
-        
-	    <input type="text" placeholder="history" values="" name="history">
-	    <button type="submit">Register</button>
-  </form>
+                <input type="text" placeholder="history" values="" name="history" required>
+                <button type="submit">Register</button>
+            </form>
         </div>
     </main>
 

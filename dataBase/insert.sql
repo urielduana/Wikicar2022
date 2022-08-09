@@ -832,3 +832,5 @@ insert into car (Id_car, Registration_plate, Color, Deficiency, Mileage, User_id
 insert into car (Id_car, Registration_plate, Color, Deficiency, Mileage, User_id, Model_id) values (null, 'WAUKH74F37N896409', 'Teal', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 37931, 16, 31);
 insert into car (Id_car, Registration_plate, Color, Deficiency, Mileage, User_id, Model_id) values (null, '3VWJP7AT3CM902304', 'Turquoise', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 36209, 3, 61);
 insert into car (Id_car, Registration_plate, Color, Deficiency, Mileage, User_id, Model_id) values (null, '2C4RDGAG0CR295448', 'Indigo', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 95154, 15, 8);
+
+

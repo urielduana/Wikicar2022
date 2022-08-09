@@ -12,7 +12,7 @@
         $userEmail =    $row['Email'];
         $userGender =   $row['Gender'];
      }
-
+ 
      if(($userGender=='m') or  ($userGender=='M')){
         $userGenderEcho= "Male";
      }elseif(($userGender=='f') or  ($userGender=='F')){
@@ -20,8 +20,6 @@
      }else{
         $userGenderEcho= "Other";
      }
-
-     echo ($userGender);
 ?>
 
 

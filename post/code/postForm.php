@@ -1,3 +1,26 @@
+<?php
+    include("../../connection/queries.php");
+    session_start();
+    $idUser = $_SESSION['loggedUserId'];
+    $conexion = new BasicSelect("User_name,User_Lastname,Password,Email, Gender","User","Id_user = $idUser");
+    $resultado=$conexion->getBasicSelect();
+
+    while($row = $resultado->fetch_assoc()) {
+        $userName =     $row['User_name'];
+        $userLastName = $row['User_Lastname'];
+        $userPassword = $row['Password'];
+        $userEmail =    $row['Email'];
+        $userGender =   $row['Gender'];
+     }
+ 
+     if(($userGender=='m') or  ($userGender=='M')){
+        $userGenderEcho= "Male";
+     }elseif(($userGender=='f') or  ($userGender=='F')){
+        $userGenderEcho= "Female";
+     }else{
+        $userGenderEcho= "Other";
+     }
+?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -18,7 +41,8 @@
     <!--TOP NAVIGATION-->
     <header id="header">
         <div class="topnav" id="myTopnav">
-            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo"> <b>WikiCar</b></a>
+            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo">
+                <b>WikiCar</b></a>
             <a href="/wikicar/profile/code/profileCheck.php">PROFILE</a>
             <a href="/wikicar/profile/code/garageCheck.php">GARAGE</a>
 
@@ -62,22 +86,7 @@
 
     <main>
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsa, possimus delectus animi
-                placeat odit vitae dolorum dignissimos nostrum nesciunt, optio quibusdam blanditiis, reiciendis unde
-                reprehenderit quod recusandae accusantium quasi! Nisi amet distinctio earum consequuntur suscipit
-                ratione id quaerat ex, quisquam molestiae non. Vero tenetur quia laborum excepturi? Minus est possimus
-                facere enim, laudantium adipisci quam quas delectus ratione, nisi sapiente asperiores earum odit nostrum
-                voluptas quos cupiditate incidunt temporibus? Quibusdam, quod vero? Porro voluptatum dolorem sunt
-                praesentium fugiat illum nam rerum sit nihil velit. Repellat, corrupti. Officia repellendus est
-                molestias, aliquid repellat totam similique accusamus molestiae voluptatum fuga porro libero adipisci
-                blanditiis laudantium hic quia? Accusantium ab eaque dolorum enim itaque provident ducimus? Quae unde
-                voluptatem obcaecati rem quis fuga neque quaerat corrupti odit nemo ipsa perferendis similique ad
-                doloremque architecto atque, magnam velit saepe nobis. Qui ea tempora amet enim maxime delectus ad nihil
-                voluptatibus harum recusandae alias libero expedita corporis perspiciatis modi quae, mollitia totam
-                quisquam. Quas, quod asperiores aut numquam eum eius dolor sed perferendis optio nostrum fugiat fuga et
-                id temporibus voluptas magni ipsam nesciunt, repudiandae maxime laborum architecto impedit officia
-                similique. Dolore quam laudantium alias, deserunt consequatur iure quisquam asperiores exercitationem
-                cumque quos voluptate?</p>
+
         </div>
     </main>
 

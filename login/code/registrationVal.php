@@ -17,18 +17,17 @@ if(strlen($_POST['name']) >= 1 && strlen($_POST['last']) >=1 && strlen($_POST['e
     $password = trim($_POST['password']);
     $gender = trim($_POST['gender']);
 
-<<<<<<< HEAD
+
     $conexion = new BasicProcedure("createAccount", "'$name','$last','$password','$email','$gender'", "@exit");
     $resultado = $conexion->getProcedureOutput();
 
-=======
+
     
     $connection = new BasicProcedure("createAccount", "'$name','$last','$password','$email','$gender',@out");
     $result = $connection->getProcedure();
 
     $consulta = "insert into user( User_name,User_lastname,Password,Email,Gender,Permission) VALUES ('".$name."','".$last."','".$password."','".$email."','".$gender."','N')";
     $resultado = mysqli_query($conexion->getConexion(),$consulta);
->>>>>>> a9e022a (vistas creadas)
     if($resultado){
         ?>
         <?php

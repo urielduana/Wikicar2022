@@ -84,6 +84,7 @@
             
             $conn1->setClose($conn1->getConexion());
 ?>
+
         </div>
 
         <div>

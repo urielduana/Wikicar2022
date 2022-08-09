@@ -51,9 +51,9 @@ class BasicInsert extends Conexion{
 
     public function createInsert($values, $table, $askedValues){
         if($askedValues == ""){
-            $this -> query = "INSERT INTO $table VALUES $values;";
+            $this -> query = "INSERT INTO $table VALUES ($values);";
         }else{
-            $this -> query = "INSERT INTO $table($askedValues) VALUES $values;";
+            $this -> query = "INSERT INTO $table($askedValues) VALUES ($values);";
         }
     }
 
