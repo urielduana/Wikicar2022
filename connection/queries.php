@@ -151,18 +151,5 @@ class BasicProcedure extends Conexion{
         public function executeProcedure($query){
         $this -> result = mysqli_query($this->getConexion(),$query);
     }
-<<<<<<< HEAD
-    public function getProcedureOutput(){
-        $this -> outputResult = mysqli_query($this->getConexion(), "select $this->output;");
-        echo $this->query;
-
-        return $this->outputResult;
-    }
-
-=======
->>>>>>> a9e022a (vistas creadas)
-    public function getProcedure(){
-        return $this->result;
-    }
 }
 ?>

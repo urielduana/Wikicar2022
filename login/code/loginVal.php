@@ -10,11 +10,17 @@ if(strlen($_POST['name']) >= 1 && strlen($_POST['email']) >=1 && strlen($_POST['
     $password=$_POST['password'];
     $email=$_POST['email'];
     $conexion = new BasicSelect("User_name,Password,Email","User","User_Name ='$name' and Password = '$password' and Email = '$email'");
-
     $resultado=$conexion->getBasicSelect();
     $filas=mysqli_num_rows($resultado);
-    if($filas){            
-        header("location:../../home.php");
+
+    while($row = $resultado->fetch_assoc()) {
+        $whateverString = $row['Email'];
+     }
+
+    if($filas){   
+        echo $whateverString;
+
+        //header("location:../../home.php");
     }else{
     ?>
     <?php
