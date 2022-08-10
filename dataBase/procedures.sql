@@ -248,15 +248,14 @@ call selectSection(1);
 
 
 delimiter //
-create procedure selectSection(in sectionIdIn int(15))
+create procedure selectModel(in modelIdIn int(15))
 begin
-select brand.Brand_name, model.Model_name, section.* from section 
-inner join model on section.Model_id = model.Id_model
+select brand.Brand_name, model.* from model 
 inner join brand on model.Brand_id = brand.Id_brand
-where Id_section=sectionIdIn;
+where Id_model=modelIdIn;
 end//
 delimiter ;
-call selectSection(1);
+call selectModel(1);
 
 
 /*Views*/
