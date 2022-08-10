@@ -152,5 +152,8 @@ class BasicProcedure extends Conexion{
         public function executeProcedure($query){
         $this -> result = mysqli_query($this->getConexion(),$query);
     }
+    public function getBasicProcedure(){
+        return $this->result;
+    }
 }
 ?>

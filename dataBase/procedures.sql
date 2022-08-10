@@ -254,8 +254,33 @@ select brand.Brand_name, model.* from model
 inner join brand on model.Brand_id = brand.Id_brand
 where Id_model=modelIdIn;
 end//
+
 delimiter ;
 call selectModel(1);
+delimiter //
+create procedure selectModelList()
+begin
+select model.Id_model, brand.Brand_name, model.Model_name from model 
+inner join brand on model.Brand_id = brand.Id_brand;
+end//
+delimiter ;
+drop procedure selectModelList;
+call selectModelList;
+
+select * from section;
+delimiter ;
+call selectModel(1);
+delimiter //
+create procedure selectSectionlList()
+begin
+select section.Id_section, section.Section_type, model.Model_name from section 
+inner join model on section.Model_id = model.Id_model;
+end//
+delimiter ;
+call selectSectionlList;
+
+
+
 
 
 /*Views*/

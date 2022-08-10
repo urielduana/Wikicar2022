@@ -1,25 +1,8 @@
 <?php
     include("../../connection/queries.php");
     session_start();
-    $idUser = $_SESSION['loggedUserId'];
-    $conexion = new BasicSelect("User_name,User_Lastname,Password,Email, Gender","User","Id_user = $idUser");
-    $resultado=$conexion->getBasicSelect();
-
-    while($row = $resultado->fetch_assoc()) {
-        $userName =     $row['User_name'];
-        $userLastName = $row['User_Lastname'];
-        $userPassword = $row['Password'];
-        $userEmail =    $row['Email'];
-        $userGender =   $row['Gender'];
-     }
- 
-     if(($userGender=='m') or  ($userGender=='M')){
-        $userGenderEcho= "Male";
-     }elseif(($userGender=='f') or  ($userGender=='F')){
-        $userGenderEcho= "Female";
-     }else{
-        $userGenderEcho= "Other";
-     }
+    $name = new BasicProcedure("selectSectionlList","","");
+    $resultadoName=$name->getBasicProcedure();
 ?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
@@ -87,8 +70,22 @@
     <main>
         <h2>Post it</h2>
 
-        <div>
+        <div class="inputs">
+            <form action="postVal.php" method="post">
+                <textarea name="post" cols="50" rows="5" placeholder="Comments" required></textarea> <br>
+                <select name="section" id="section" required>
+                    <option value="" disabled="" selected="">Section</option>
 
+                    <?php 
+                        foreach($resultadoName->fetch_all() as $section){
+                            echo"<option value='$section[0]'>$section[1] - $section[2]</option>";
+       
+    }
+            ?>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
         </div>
     </main>
 
@@ -127,11 +124,12 @@
             </div>
         </div>
         <div class="footer-right">
-        <p class="footer-company-about">
+            <p class="footer-company-about">
                 <span>About us</span>
                 Ingenieria en sistemas computacionales S173 <br>
-                “I don't know how to drive in any other way than risky, when I have to exceed the limit, I exceed it. Every driver has a limit, mine is a little beyond.
-                </p>
+                “I don't know how to drive in any other way than risky, when I have to exceed the limit, I exceed it.
+                Every driver has a limit, mine is a little beyond.
+            </p>
             <div class="footer-icons">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>

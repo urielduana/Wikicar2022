@@ -70,7 +70,7 @@
 
             $conn1= new Conexion("localhost:3306","wikicar","root","");
             $id =  $_SESSION['loggedUserId'];
-            $sql = "SELECT Registration_plate, Color, Deficiency, Mileage FROM car WHERE User_id = $id";
+            $sql = "SELECT model.Model_name, Registration_plate, Color, Deficiency, Mileage FROM car inner join model on car.Model_id = model.Id_model WHERE User_id = $id";
             $result = mysqli_query($conn1->getConexion(),$sql);
 
             echo "<table border>\n";
@@ -87,7 +87,7 @@
 ?>
 
             <body>
-                <form action="/wikicar/profile/code/carForm.php" target="_blank">
+                <form action="carForm.php">
                     <button type="submit">Add a New Car</button>
                 </form>
         </div>

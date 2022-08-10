@@ -1,3 +1,9 @@
+<?php
+    include("../../connection/queries.php");
+    session_start();
+    $name = new BasicProcedure("selectModelList","","");
+    $resultadoName=$name->getBasicProcedure();
+?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -18,7 +24,8 @@
     <!--TOP NAVIGATION-->
     <header id="header">
         <div class="topnav" id="myTopnav">
-            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo"> <b>WikiCar</b></a>
+            <a href="/wikicar/home.php" id="active"><img src="/wikicar/img/wikicarLogo.png" class="logo">
+                <b>WikiCar</b></a>
             <a href="/wikicar/profile/code/profileCheck.php">PROFILE</a>
             <a href="/wikicar/profile/code/garageCheck.php">GARAGE</a>
 
@@ -61,7 +68,26 @@
     </header>
 
     <main>
+        <div class="inputs">
+            <form action="carVal.php" method="post">
+                <input type="text" placeholder="Registration Plate" values="" name="plate" required><br>
+                <input type="text" placeholder="Color" values="" name="color" required><br>
+                <input type="number" placeholder="Mileage" values="" name="mileage" required><br>
+                <textarea name="deficiency" cols="50" rows="5" placeholder="Deficiencies" required></textarea> <br>
+                <select name="model" id="model" required>
+                    <option value="" disabled="" selected="">Model</option>
 
+                    <?php 
+                        foreach($resultadoName->fetch_all() as $brand){
+                            echo"<option value='$brand[0]'>$brand[2] - $brand[1]</option>";
+       
+    }
+            ?>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
     </main>
 
 
