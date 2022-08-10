@@ -295,3 +295,5 @@ select * from vw_posts;
 create view vw_models as select Brand_name,Model_name,Model_type,Doors,Seats,GasTank_capacity,Gas_type,Model_year,Starting_price,Actual_price,Configuration from model inner join brand on model.Brand_id = brand.Id_brand;
 select * from vw_models;
 create view vw_emails as select Email from user;
+
+select * from model;
