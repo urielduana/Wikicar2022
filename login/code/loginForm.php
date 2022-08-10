@@ -24,7 +24,6 @@
     <form action="registrationForm.php">
       <button type="submit">Create account</button>
     </form>
-    <a href="newpass.php">Forgot Password? </a>
   </div>
 
 </div>

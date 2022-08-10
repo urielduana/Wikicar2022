@@ -2,7 +2,8 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background: 14181f;
+    /*background: 14181f;*/
+    background: linear-gradient(#141e30, #243b55);
     display: flex;
     align-items: center;
     text-align: center;
@@ -20,19 +21,19 @@ body {
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   }
     
   .brand-logo {
     height: 100px;
     width: 100px;
-    background: url("../img/ico/icono.png");
+    background: url("../../assets/img/logos/logo.png");
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;
     box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
     background-repeat: no-repeat;
     background-position: center;
+    background-size:contain;
   }
     
   .brand-title{
@@ -74,7 +75,7 @@ body {
   button {
     color: white;
     margin-top: 20px;
-    background: #1DA1F2;
+    background: #8f9296;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
