@@ -1,3 +1,9 @@
+<?php
+    include("../../connection/queries.php");
+    session_start();
+    $name = new BasicSelect("Id_brand, Brand_name","brand","");
+    $resultadoName=$name->getBasicSelect();
+?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -63,22 +69,31 @@
     <main>
         <h2>Models</h2>
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsa, possimus delectus animi
-                placeat odit vitae dolorum dignissimos nostrum nesciunt, optio quibusdam blanditiis, reiciendis unde
-                reprehenderit quod recusandae accusantium quasi! Nisi amet distinctio earum consequuntur suscipit
-                ratione id quaerat ex, quisquam molestiae non. Vero tenetur quia laborum excepturi? Minus est possimus
-                facere enim, laudantium adipisci quam quas delectus ratione, nisi sapiente asperiores earum odit nostrum
-                voluptas quos cupiditate incidunt temporibus? Quibusdam, quod vero? Porro voluptatum dolorem sunt
-                praesentium fugiat illum nam rerum sit nihil velit. Repellat, corrupti. Officia repellendus est
-                molestias, aliquid repellat totam similique accusamus molestiae voluptatum fuga porro libero adipisci
-                blanditiis laudantium hic quia? Accusantium ab eaque dolorum enim itaque provident ducimus? Quae unde
-                voluptatem obcaecati rem quis fuga neque quaerat corrupti odit nemo ipsa perferendis similique ad
-                doloremque architecto atque, magnam velit saepe nobis. Qui ea tempora amet enim maxime delectus ad nihil
-                voluptatibus harum recusandae alias libero expedita corporis perspiciatis modi quae, mollitia totam
-                quisquam. Quas, quod asperiores aut numquam eum eius dolor sed perferendis optio nostrum fugiat fuga et
-                id temporibus voluptas magni ipsam nesciunt, repudiandae maxime laborum architecto impedit officia
-                similique. Dolore quam laudantium alias, deserunt consequatur iure quisquam asperiores exercitationem
-                cumque quos voluptate?</p>
+            <form action="modelVal.php" method="post" >
+                <input type="text" placeholder="Model Name" values="" name="model" required><br>
+                <input type="text" placeholder="Model Type" values="" name="type" required><br>
+                <input type="number" placeholder="Number Doors" values="" name="door" required><br>
+                <input type="number" placeholder="Number Seats" values="" name="seats" required><br>
+                <input type="number" placeholder="Gas Tank Capacity" values="" name="capacity" required><br>
+                <input type="text" placeholder="Gas Type" values="" name="type" required><br>
+                <input type="number" placeholder="Model Year" values="" name="year" required><br>
+                <input type="number" placeholder="Starting Price" values="" name="start" required><br>
+                <input type="number" placeholder="Actual Price" values="" name="actual" required><br>
+                <textarea name="configuration" cols="50" rows="5" placeholder="Configuration" required></textarea> <br>
+
+
+                <select name="brand" id="brand" required>
+                <option value="" disabled="" selected="">Brand</option>
+
+                    <?php 
+                        foreach($resultadoName->fetch_all() as $brand){
+                            echo"<option value='$brand[0]'>$brand[1]</option>";
+       
+    }
+            ?>
+                </select>
+                <button type="submit">Register</button>
+            </form>
         </div>
     </main>
 

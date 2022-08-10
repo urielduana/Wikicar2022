@@ -16,7 +16,7 @@ include("../../connection/queries.php");
     $brandInsert = new BasicInsert("'$brand','$founders','$date','$history','1','$country'", "brand", "Brand_name,Founders,Foundation_date,Brand_history,Object_id,Country_id");
     $brandInsert->setClose($brandInsert);
 
-    header("location:/wikicar/home.php");
+    header("location:/wikicar/brand/code/brandCheck.php");
     
 ?>
 

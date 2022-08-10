@@ -1,5 +1,6 @@
 use wikicar;
 show tables;
+
 /*Trigger log*/
 DELIMITER //
 create trigger upd_object after update on object
@@ -9,7 +10,6 @@ insert into log (action) Value
 ' su antiguo Id es: ',old.Id_object,' Por su nuevo Id: ',new.Id_object));
 end //
 DELIMITER ;
-
 DELIMITER //
 create trigger upd_brand after update on brand
 for each row begin
@@ -278,7 +278,6 @@ inner join model on section.Model_id = model.Id_model;
 end//
 delimiter ;
 call selectSectionlList;
-
 
 
 
