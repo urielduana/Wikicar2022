@@ -3,9 +3,11 @@ show tables;
 
 select * from user;
 
-/*Hacer una vista de emails para comparar*/
-/*Vista para post*/
-;delimiter //
+
+
+
+/*Procedures*/
+delimiter //
 create procedure createAccount(in  namein varchar(35), in lastnamein varchar(35), in passin varchar(35), in emailin varchar(35), in gender char(1), out existout boolean)
 begin
 select Id_user into @check from user where email = emailin;
@@ -18,13 +20,60 @@ else
 END IF;
 end//
 delimiter ;
+describe news;
 
-drop procedure createAccount;
-call createAccount('Luis', 'Martinez', '123123', 'f@gmail.com', 'M', @exist);
-select @exist;
-call createAccount('Luis', 'Martinez', '123123', 'f@gmail.com', 'M', @exist);
-call createAccount('Luis', 'Martinez', '12356480', 'f@gmail.com', 'M', @exist);
+delimiter //
+create procedure createNew(in textin text)
+begin
+insert into news(Id_news, News_date, News_text) values(null, NOW(), textin);
+end//
+delimiter ;
+call createNew('texto de prueba xd');
 
+describe post;
+delimiter //
+create procedure postIt(in textin text, in sectionIdIn int(15), in userIdIn int(15))
+begin
+insert into post(Id_post, Post_date, Post_text, Section_id, User_id) 
+values(null, NOW(), textin, sectionIdIn, userIdIn);
+end//
+delimiter ;
+call postIt('post de ejemplo hola', 1, 1);
+select * from post;
+
+
+delimiter //
+create procedure postIt(in textin text, in sectionIdIn int(15), in userIdIn int(15))
+begin
+insert into post(Id_post, Post_date, Post_text, Section_id, User_id) 
+values(null, NOW(), textin, sectionIdIn, userIdIn);
+end//
+delimiter ;
+
+delimiter //
+create procedure selectSection(in sectionIdIn int(15))
+begin
+select brand.Brand_name, model.Model_name, section.* from section 
+inner join model on section.Model_id = model.Id_model
+inner join brand on model.Brand_id = brand.Id_brand
+where Id_section=sectionIdIn;
+end//
+delimiter ;
+call selectSection(1);
+
+
+delimiter //
+create procedure selectModel(in modelIdIn int(15))
+begin
+select brand.Brand_name, model.* from model 
+inner join brand on model.Brand_id = brand.Id_brand
+where Id_model=modelIdIn;
+end//
+delimiter ;
+call selectModel(1);
+
+
+/*Views*/
 create view vw_news as select News_date,News_text from news where Id_news in (Select MAX(Id_news) FROM news);
 select * from vw_news;
 
