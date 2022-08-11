@@ -67,29 +67,28 @@
         </div>
     </header>
 
-    <main>
+    <br><br><br>
+    <div class="card">
+        <div class="card2">
+            <br>
         <h2>Post it</h2>
-
         <div class="inputs">
             <form action="postVal.php" method="post">
                 <textarea name="post" cols="50" rows="5" placeholder="Comments" required></textarea> <br>
                 <select name="section" id="section" required>
-                    <option value="" disabled="" selected="">Section</option>
-
-                    <?php 
-                        foreach($resultadoName->fetch_all() as $section){
-                            echo"<option value='$section[0]'>$section[1] - $section[2]</option>";
-       
-    }
-            ?>
+                <option value="" disabled="" selected="">Section</option>
+                <?php 
+                foreach($resultadoName->fetch_all() as $section){
+                echo"<option value='$section[0]'>$section[1] - $section[2]</option>";
+                }
+                ?>
                 </select>
-
                 <button type="submit">Register</button>
             </form>
         </div>
-    </main>
-
-
+        </div>
+    </div>
+<br><br><br><br>
     <footer class="footer-distributed">
 
         <div class="footer-left">

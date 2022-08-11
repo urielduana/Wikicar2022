@@ -12,7 +12,7 @@
 <div class="container">
 
   <div class="brand-logo"></div>
-  <div class="brand-title">WIKICAR</div>
+  <div class="brand-title">Login</div>
   <div class="inputs">
     <form action="loginVal.php" method="post">
       <input type="text" placeholder="Name" name="name" required><br>

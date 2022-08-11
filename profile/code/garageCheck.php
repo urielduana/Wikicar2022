@@ -9,6 +9,7 @@
     <title>My Garage | WikiCar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/wikicar/mainStyle.css">
+    <link rel="stylesheet" href="../css/profileEdit.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 </head>
@@ -60,9 +61,11 @@
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
         </div>
     </header>
-
-    <main>
-        <h2>Garage</h2>
+<br><br><br>
+    <div class="card">
+            <div class="card2">
+          <br>
+            <h2>Garage</h2>
         <div>
             <?php 
             session_start();
@@ -77,28 +80,32 @@
             while($row = mysqli_fetch_row($result)){
             echo "<tr>\n";
             foreach($row as $field){
-            echo "<td>$field</td>\n";
+            echo "<td>$field ||</td>\n";
             }
             echo"</tr>\n";
             }
             echo "</table>\n";
             
             $conn1->setClose($conn1->getConexion());
-?>
-
-            <body>
-                <form action="carForm.php">
+            ?>
+                
+            <div class="nuevoCarro">
+            <form action="carForm.php">
                     <button type="submit">Add a New Car</button>
                 </form>
+            </div>
+            
         </div>
 
         <div>
 
         </div>
-    </main>
+            </div>
+        </div>
 
-
-    <footer class="footer-distributed">
+        <body>
+<br><br><br>
+        <footer class="footer-distributed">
 
         <div class="footer-left">
             <h3>WikiCar</h3>

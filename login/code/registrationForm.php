@@ -6,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/createaccount.css">
+    <link rel="stylesheet" href="../css/loginStyles.css">
+
     <title>wikicar</title>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="containerNew">
 
         <div class="brand-logo"></div>
-        <div class="brand-title">Wikicar</div>
+        <div class="brand-title">Register</div>
 
         <div class="inputs">
             <form action="registrationVal.php" method="post">
@@ -23,7 +25,7 @@
                 <input type="email" placeholder="E-mail" values="" name="email" required><br>
                 <input type="password" placeholder="Password" values="" name="password" required>
                 <p>
-                    <select name="gender">
+                    <select name="gender" required>
                         <option value="" disabled="" selected="">Gender</option>
                         <option value="m">Male</option>
                         <option value="f">Female</option>

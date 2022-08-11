@@ -15,6 +15,7 @@
     <title>Add a Model | WikiCar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/wikicar/mainStyle.css">
+    <link rel="stylesheet" href="../css/modelForm.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 </head>
@@ -68,7 +69,7 @@
 
     <main>
         <h2>Models</h2>
-        <div>
+        <div class="containerModel">
             <form action="modelVal.php" method="post" >
                 <input type="text" placeholder="Model Name" values="" name="model" required><br>
                 <input type="text" placeholder="Model Type" values="" name="type" required><br>
@@ -91,13 +92,13 @@
        
     }
             ?>
-                </select>
+                </select><br>
                 <button type="submit">Register</button>
             </form>
         </div>
     </main>
 
-
+<br><br><br>
     <footer class="footer-distributed">
 
         <div class="footer-left">

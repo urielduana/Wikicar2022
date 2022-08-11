@@ -58,37 +58,37 @@
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
         </div>
     </header>
-    <h1>News</h1>
     <main>
         <div>
-        <?php 
+        <div class="card">
+            <div class="card2">
+                <?php 
+                    include("connection/conexion.php");
+                    $conn1= new Conexion("localhost:3306","wikicar","root","");
+                    $sql = "SELECT * FROM vw_news";
+                    $result = mysqli_query($conn1->getConexion(),$sql);
 
-            include("connection/conexion.php");
-            $conn1= new Conexion("localhost:3306","wikicar","root","");
-
-            $sql = "SELECT * FROM vw_news";
-            $result = mysqli_query($conn1->getConexion(),$sql);
-
-            echo "<table border>\n";
-            while($row = mysqli_fetch_row($result)){
-            echo "<tr>\n";
-            foreach($row as $field){
-            echo "<td>$field</td>\n";
-            }
-            echo"</tr>\n";
-            }
-            echo "</table>\n";
-            $conn1->setClose($conn1->getConexion());
-        ?>
+                    echo "<table border>\n";
+                    while($row = mysqli_fetch_row($result)){
+                        echo "<tr>\n";
+                        foreach($row as $field){
+                        echo "<td>$field</td>\n";
+                        }
+                    echo"</tr>\n";
+                    }
+                    echo "</table>\n";
+                    $conn1->setClose($conn1->getConexion());
+                ?>
+            </div>
         </div>
-    </main>
+    </div>
+</main>
+<h1>News</h1>
 
 
-    <footer class="footer-distributed">
-
-        <div class="footer-left">
-            <h3>WikiCar</h3>
-
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>WikiCar</h3>
             <p class="footer-links">
                 <a href="home.php">Home</a>
                 |
@@ -100,29 +100,29 @@
             </p>
 
             <p class="footer-company-name">© 2022 WikiCar.com</p>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Proyecto Integrador UPQ</p>
         </div>
 
-        <div class="footer-center">
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p>Proyecto Integrador UPQ</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+91 22-27782183</p>
-            </div>
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@eduonix.com">support@wikicar.com</a></p>
-            </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+91 22-27782183</p>
         </div>
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>About us</span>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@eduonix.com">support@wikicar.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About us</span>
                 Ingenieria en sistemas computacionales S173 <br>
                 “I don't know how to drive in any other way than risky, when I have to exceed the limit, I exceed it. Every driver has a limit, mine is a little beyond.
-                </p>
+        </p>
             <div class="footer-icons">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>

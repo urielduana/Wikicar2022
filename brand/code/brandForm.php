@@ -15,6 +15,8 @@
     <title>Add a Brand | WikiCar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/wikicar/mainStyle.css">
+    <link rel="stylesheet" href="../css/brandCheck.css">
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 </head>
@@ -69,13 +71,13 @@
 
     <main>
         <h2>Brands</h2>
-        <div>
+        <div class="containerBrand">
             <form action="brandVal.php" method="post" >
-                <input type="text" placeholder="Brand Name" values="" name="brand" required>
-                <input type="text" placeholder="Founders" values="" name="founders" required>
-                <input type="date" placeholder="Foundation Date" values="" name="date" required>
-                <select name="country" id="country" required>
-                <option value="" disabled="" selected="">Country</option>
+                <input type="text" placeholder="Brand Name" values="" name="brand" required><br>
+                <input type="text" placeholder="Founders" values="" name="founders" required><br>
+                <input type="date" placeholder="Foundation Date" values="" name="date" required><br>
+                <select name="country" id="country" required><br>
+                <option value="" disabled="" selected="">Country</option><br>
 
                     <?php 
                         foreach($resultadoName->fetch_all() as $country){
@@ -91,7 +93,7 @@
         </div>
     </main>
 
-
+<br><br>
     <footer class="footer-distributed">
 
         <div class="footer-left">

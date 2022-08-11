@@ -1,36 +1,16 @@
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    /*background: 14181f;*/
-    background: linear-gradient(#141e30, #243b55);
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    place-items: center;
-    overflow: hidden;
-    font-family: poppins;
-  }
-    
-  .container {
-    position: relative;
-    width: 350px;
-    height: 590px;
-    border-radius: 20px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #ecf0f3;
-  }
+ 
     
   .containerNew {
     position: relative;
     width: 400px;
-    height: 650px;
+    height: 600px;
     border-radius: 20px;
     padding: 10px;
     box-sizing: border-box;
     background: #ecf0f3;
+    left: 35%;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
       
 
@@ -83,7 +63,7 @@ body {
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   }
     
-  button {
+  .containerNew button {
     color: white;
     margin-top: 20px;
     background: #2b3e61;
@@ -99,17 +79,6 @@ body {
     box-shadow: none;
   }
     
-  a {
-    position: absolute;
-    font-size: 15px;
-    bottom: 4px;
-    right: 4px;
-    text-decoration: none;
-    color: black;
-    background: yellow;
-    border-radius: 10px;
-    padding: 2px;
-  }
   .ok {
     text-align: center;
     width: 100%;
@@ -134,4 +103,13 @@ body {
       top: -2%;
   }
   
-  
+  .nuevoCarro button{
+    color: white;
+    margin-top: 20px;
+    background: #2b3e61;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    transition: 0.5s;
+  }

@@ -62,8 +62,10 @@
     </header>
 
     <main>
-    <h2>Profile</h2>
-        <div>
+    <div>
+        <div class="card">
+            <div class="card2">
+          
             <?php 
             session_start();
             include("../../connection/conexion.php");
@@ -77,22 +79,22 @@
             while($row = mysqli_fetch_row($result)){
             echo "<tr>\n";
             foreach($row as $field){
-            echo "<td>$field</td>\n";
+            echo "<td>$field ||</td>\n";
             }
-            echo '<th><a href="profileEdit.php">Edit Profile</a></th>';
-            echo '<th><a href="profileDelete.php">Delete Profile</a></th>';
+            echo '<th><a href="profileEdit.php"><span style="color: green;">Edit profile</span></a></th>';
+            echo '<th><a href="profileDelete.php"><span style="color: red;">Delete profile</span></a></th>';
             echo"</tr>\n";
             }
 
             echo "</table>\n";
             
             $conn1->setClose($conn1->getConexion());
-?>
+            ?>
+            </div>
         </div>
-        
-    </main>
-
-
+    </div>
+    <h1>Profile</h1>
+   
     <footer class="footer-distributed">
 
         <div class="footer-left">

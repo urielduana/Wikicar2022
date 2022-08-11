@@ -61,9 +61,9 @@
     </header>
 
     <main>
-        <div>
+        <div class="containerBrand">
             <h2>Brands</h2>
-        <?php 
+            <?php 
 
             include("../../connection/conexion.php");
 
@@ -82,7 +82,7 @@
             }
             echo "</table>\n";
             $conn1->setClose($conn1->getConexion());
-        ?>
+            ?>
         </div>
     </main>
 
